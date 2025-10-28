@@ -1,9 +1,9 @@
 {
   "name": "justin-atoyebi-portfolio",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
-  "homepage": "https://stan-ley-tech.github.io/Justin-Ayotebi-Portfolio",
+  "homepage": "https://github.com/stan-ley-tech/Justin-Atoyebi-Portfolio.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
