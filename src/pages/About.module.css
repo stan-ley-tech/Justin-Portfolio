@@ -1,0 +1,139 @@
+.about {
+  background-image: url('/images/download (4).jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Main section */
+.main {
+  padding: 8rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card container */
+.card {
+  max-width: 900px;
+  background-color: rgba(255, 255, 255, 0.96);
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 5;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: fadeInUp 1.5s ease;
+}
+
+/* Bio points */
+.bio {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.point {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.point::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #f59e0b;
+  font-size: 1.1rem;
+  top: 0;
+}
+
+/* Creative Philosophy */
+.philosophy {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.quoteBlock {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.philosophy blockquote {
+  font-style: italic;
+  background: #fff7ed;
+  border-left: 4px solid #f59e0b;
+  padding: 1rem 1.25rem;
+  color: #374151;
+  border-radius: 0.5rem;
+  line-height: 1.7;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Signature quote */
+.quote {
+  background-color: #fef3c7;
+  border-left: 4px solid #fbbf24;
+  padding: 1rem 1.5rem;
+  font-style: italic;
+  color: #374151;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+/* CTA button */
+.cta {
+  text-align: center;
+}
+
+.ctaBtn {
+  background-color: #f59e0b;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background-color: #d97706;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .philosophy {
+    flex-direction: column;
+  }
+
+  .quoteBlock {
+    min-width: 100%;
+  }
+}

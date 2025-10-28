@@ -1,0 +1,185 @@
+/* Background & layout */
+.contactPage {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('/images/download (4).jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.contactPage::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 1.5rem 2rem;
+}
+
+/* Headings */
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.subtitle {
+  font-size: 1rem;
+  text-align: center;
+  max-width: 36rem;
+  margin-bottom: 2rem;
+  color: #e5e5e5;
+  line-height: 1.7;
+}
+
+/* Form card container */
+.contactCard {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 650px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: white;
+}
+
+/* Two-input row */
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.row .inputGroup {
+  flex: 1;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  font-weight: 500;
+  color: #f9fafb;
+  font-size: 0.95rem;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
+  background: rgba(255,255,255,0.15);
+}
+
+/* Button section */
+.buttonSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.submitBtn {
+  background-color: #f59e0b;
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.submitBtn:hover {
+  background-color: #d97706;
+  transform: translateY(-2px);
+}
+
+/* Info section below form */
+.infoSection {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.contactRow {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactRow p {
+  margin: 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.contactLocation {
+  font-weight: 500;
+  color: #e5e5e5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.contactInfo a,
+.infoSection a {
+  color: #f59e0b;
+  text-decoration: none;
+}
+
+.infoSection a:hover {
+  text-decoration: underline;
+}
