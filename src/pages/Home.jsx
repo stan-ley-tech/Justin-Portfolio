@@ -8,52 +8,49 @@ function Home() {
     <div className={styles.home}>
       <Navbar />
 
-      {/* Hero Section */}
-      <main className={styles.hero}>
-        <h1>Justin Atoyebi</h1>
-        <h2>Creative Visionary | Film & TV Producer | Entrepreneur</h2>
-        
-      </main>
+      {/* ==============================
+          HERO + ABOUT SECTION (Shared Background)
+      =============================== */}
+      <section className={styles.heroAboutWrapper}>
+        <div className={styles.heroAboutInner}>
+          {/* Left Side - Hero Content */}
+          <main className={styles.hero}>
+            <h1>Justin Atoyebi</h1>
+            <h2>Creative Visionary | Film & TV Producer | Entrepreneur</h2>
+            <p>
+              Capturing stories that move audiences and inspire culture.
+              Explore my work in film, television, and creative media production.
+            </p>
+          </main>
 
-      {/* About Section */}
-      <section className={styles.about}>
-        <p>
-          With a passion for storytelling and visual artistry, I fuse creativity,
-          leadership, and innovation to deliver world-class film and television
-          experiences.
-        </p>
-
-        <div className={styles.aboutImages}>
-          <img src="/images/studio 💽.jpeg" alt="Studio creative work" />
-          <img
-            src="/images/fe8ffaf9-f80d-489a-8a00-1717ef77ea77.jpeg"
-            alt="Behind the scenes film shot"
-          />
-          <img
-            src="/images/c5117801-bca9-4f50-b258-0a62fe19e92a.jpeg"
-            alt="Production setup"
-          />
-          <img
-            src="/images/Are you sabotaging your music career_ These 10….jpeg"
-            alt="Music career production insight"
-          />
+          {/* Right Side - About Card */}
+          <div className={styles.aboutCard}>
+            <img src="/images/Image1.jpeg" alt="Studio creative work" />
+            <div className={styles.aboutText}>
+             
+              <p>
+                Justin Atoyebi is a passionate film and TV producer who brings 
+                stories to life with creativity, emotion, and purpose. His work 
+                bridges art and entrepreneurship, shaping narratives that inspire 
+                and connect audiences globally.
+              </p>
+            </div>
+          </div>
         </div>
-
-        <Link to="/about" className={styles.learnMoreBtn}>
-          Learn More
-        </Link>
       </section>
 
-      {/* Featured Projects */}
+      {/* ==============================
+          FEATURED PROJECTS
+      =============================== */}
       <section className={styles.featured}>
         <h3>Featured Projects</h3>
 
         <div className={styles.projectGrid}>
+          {/* Card 1 */}
           <div className={styles.projectCard}>
-            <img src="/images/_w_.jpeg" alt="Open Case Short Film" />
+            <img src="/images/Image2.jpeg" alt="Open Case Short Film" />
             <div className={styles.projectCardContent}>
               <h4>Open Case Short Film</h4>
-              <span>Director | Editor | Producer</span>
               <p>
                 A suspense-driven short exploring the depths of human emotion
                 and perception.
@@ -61,14 +58,11 @@ function Home() {
             </div>
           </div>
 
+          {/* Card 2 */}
           <div className={styles.projectCard}>
-            <img
-              src="/images/cea04ee2-706d-4099-8fde-b398865687ce.jpeg"
-              alt="Daymare Promo"
-            />
+            <img src="/images/Image6.jpeg" alt="Daymare Promo" />
             <div className={styles.projectCardContent}>
               <h4>Daymare Promo</h4>
-              <span>Creative Director | Producer</span>
               <p>
                 A gripping visual concept blending creativity and cinematic
                 storytelling.
@@ -76,32 +70,53 @@ function Home() {
             </div>
           </div>
 
+          {/* Card 3 */}
           <div className={styles.projectCard}>
-            <img
-              src="/images/621659ad-b865-4215-b288-8b6af547110b.jpeg"
-              alt="Creative Direction Reel"
-            />
+            <img src="/images/Image7.jpeg" alt="Creative Direction Reel" />
             <div className={styles.projectCardContent}>
               <h4>Creative Direction Reel</h4>
-              <span>Director | Editor</span>
               <p>
                 A visual showcase of artistic mastery and unique storytelling
                 vision.
               </p>
             </div>
           </div>
-        </div>
 
-        <Link to="/portfolio" className={styles.viewAllBtn}>
-          View Full Portfolio
-        </Link>
+          {/* Card 4 - Blurred Portfolio Box */}
+          <div className={`${styles.projectCard} ${styles.portfolioCard}`}>
+            <div className={styles.portfolioOverlay}>
+              <Link to="/portfolio" className={styles.portfolioLink}>
+                View Full Portfolio →
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Philosophy Section */}
+      {/* ==============================
+          PHILOSOPHY SECTION
+      =============================== */}
       <section className={styles.philosophy}>
-        <blockquote>
-          “Every frame tells a story my mission is to make each one unforgettable.”
-        </blockquote>
+        <div className={styles.philosophyMainCard}>
+          <div className={styles.philosophyOverlayCard}>
+            <blockquote>
+              “Every frame tells a story — my mission is to make each one
+              unforgettable.”
+            </blockquote>
+
+            <Link to="/about" className={styles.philosophyLink}>
+              Learn more →
+            </Link>
+          </div>
+
+          <div className={styles.philosophyImageWrap}>
+            <img
+              src="/images/Image1.jpeg"
+              alt="Philosophy visual"
+              className={styles.philosophyImage}
+            />
+          </div>
+        </div>
       </section>
 
       <Footer />

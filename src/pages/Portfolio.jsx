@@ -12,6 +12,8 @@ function getVideoData(url) {
       videoId = parsedUrl.searchParams.get("v");
     } else if (parsedUrl.pathname.startsWith("/shorts/")) {
       videoId = parsedUrl.pathname.split("/")[2];
+    } else if (parsedUrl.hostname === "youtu.be") {
+      videoId = parsedUrl.pathname.slice(1);
     }
     return {
       embed: `https://www.youtube.com/embed/${videoId}`,
@@ -28,58 +30,37 @@ function Portfolio() {
     {
       id: 1,
       title: "Open Case Short Film",
-      url: "https://www.youtube.com/watch?v=sR-3QKoKs2k",
+      url: "https://youtu.be/TPCEjz9GFKU",
       role: "Director | Editor | Producer",
       description: "A cinematic short film exploring human emotion and suspense.",
     },
     {
       id: 2,
-      title: "Daymare Promo",
-      url: "https://youtube.com/shorts/2bqXbE_-MEM?si=WHyoUb9So2oVMhW9",
+      title: "Creative Promo Video",
+      url: "https://youtu.be/Smyi_BWGy50",
       role: "Creative Director | Producer",
-      description: "Promotional teaser capturing the essence and creative direction of Daymare.",
+      description: "An engaging promotional video showcasing creativity and direction.",
     },
     {
       id: 3,
-      title: "Creative Direction Reel",
-      url: "https://youtube.com/shorts/xdfQ48koCHU?si=B2P1-x-hIgQ6WKQz",
+      title: "Storytelling Highlight",
+      url: "https://youtu.be/UzaVoXESC9Y?si=n7HVytAzweo4pD4b",
       role: "Director | Cinematographer",
-      description: "Highlights of diverse creative works showcasing visual storytelling.",
+      description: "A compilation highlighting visual storytelling and cinematic skills.",
     },
     {
       id: 4,
-      title: "Behind the Scenes Music Production",
-      url: "https://youtube.com/shorts/JRoam571b58?si=Gm9kH8m3oQaZerlx",
+      title: "Behind the Scenes",
+      url: "https://youtu.be/P9qMo0wHUgg?si=2xsOV27L4GIUBVh-",
       role: "Sound Engineer | Director",
-      description: "A behind-the-scenes look at the artistry and process in studio production.",
+      description: "Exclusive behind-the-scenes footage showing production and process.",
     },
     {
       id: 5,
-      title: "Film/TV Project Highlight",
-      url: "https://youtube.com/shorts/s3IAHXP1dfs?si=lXV-lZ9IsEGAH702",
-      role: "Director | Producer",
-      description: "Showcasing visual storytelling and direction for film and TV production.",
-    },
-    {
-      id: 6,
-      title: "Animation Showcase",
-      url: "https://youtube.com/shorts/9ORWF5RkdO0?si=_uFY4d_Ij_IPa3q5",
-      role: "Animator | Storyboard Artist",
-      description: "A creative mix of motion design and storytelling through animation.",
-    },
-    {
-      id: 7,
-      title: "Cinematography Reel",
-      url: "https://youtube.com/shorts/LQtkl3auvv8?si=zFdCWIjy4MruR8yN",
-      role: "Cinematographer | Director",
-      description: "Compilation reel showcasing visual framing, lighting, and storytelling.",
-    },
-    {
-      id: 8,
-      title: "Music Video Project",
-      url: "https://youtube.com/shorts/GodmYPfMaio?si=GBcetOji_5Q69SD5",
+      title: "Music Video Showcase",
+      url: "https://youtu.be/2hOeuldPST8",
       role: "Director | Editor | Producer",
-      description: "Creative music video emphasizing emotion, rhythm, and performance.",
+      description: "Creative music video emphasizing emotion, rhythm, and storytelling.",
     },
   ];
 
@@ -107,7 +88,6 @@ function Portfolio() {
                 onMouseEnter={() => setHoveredVideo(video.id)}
                 onMouseLeave={() => setHoveredVideo(null)}
               >
-                {/* Default thumbnail, play on hover */}
                 {hoveredVideo === video.id ? (
                   <iframe
                     src={`${embed}?autoplay=1&mute=1`}
@@ -123,7 +103,6 @@ function Portfolio() {
                   />
                 )}
 
-                {/* Play overlay */}
                 <div className={styles.overlay}>
                   <div className={styles.playButton}>▶ Play</div>
                 </div>
@@ -139,9 +118,18 @@ function Portfolio() {
         </div>
 
         {selectedVideo && (
-          <div className={styles.modalOverlay} onClick={() => setSelectedVideo(null)}>
-            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-              <button onClick={() => setSelectedVideo(null)} className={styles.closeBtn}>
+          <div
+            className={styles.modalOverlay}
+            onClick={() => setSelectedVideo(null)}
+          >
+            <div
+              className={styles.modalContent}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedVideo(null)}
+                className={styles.closeBtn}
+              >
                 ✕ Close
               </button>
               <div className={styles.videoWrapper}>

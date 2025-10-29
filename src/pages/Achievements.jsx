@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./Achievements.module.css";
@@ -44,6 +45,7 @@ function Achievements() {
         </p>
 
         <div className={styles.grid}>
+          {/* Loop through main achievements */}
           {achievements.map((a, i) => (
             <div key={i} className={styles.card}>
               <h3 className={styles.cardTitle}>{a.title}</h3>
@@ -51,15 +53,15 @@ function Achievements() {
             </div>
           ))}
 
-          {/* Sixth Card: Portfolio Redirect */}
+          {/* ✅ Sixth Card: Portfolio Redirect */}
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>Explore My Portfolio</h3>
             <p className={styles.cardDetail}>
-              See my full creative work including film, TV, music, and media projects.
+              See my full creative work — film, TV, music, and media projects that define my creative journey.
             </p>
-            <a href="/portfolio" className={styles.ctaBtn}>
-              Go to Portfolio
-            </a>
+            <Link to="/portfolio" className={styles.ctaBtn}>
+              Go to Portfolio →
+            </Link>
           </div>
         </div>
       </main>

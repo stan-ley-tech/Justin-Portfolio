@@ -9,7 +9,7 @@ function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.navContainer}>
         <div className={styles.logo}>
-          <Link to="/">Justin</Link>
+          <Link to="/">Justin Atoyebi</Link>
         </div>
 
         {/* Navigation menu */}

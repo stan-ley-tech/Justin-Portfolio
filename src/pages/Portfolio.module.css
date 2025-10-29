@@ -1,7 +1,7 @@
 .portfolioPage {
   position: relative;
   min-height: 100vh;
-  background-image: url('/images/download (4).jpeg');
+  background-image: url('/dist/images/background.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

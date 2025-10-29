@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./About.module.css";
+import { Link } from "react-router-dom"; // ✅ Import Link for navigation
 
 function About() {
   return (
@@ -28,12 +29,14 @@ function About() {
           {/* -------- Creative Philosophy -------- */}
           <div className={styles.philosophy}>
             <div className={styles.quoteBlock}>
-              <blockquote>“Art is not created  it’s revealed through light, rhythm, and truth.”</blockquote>
-              
+              <blockquote>
+                “Art is not created — it’s revealed through light, rhythm, and truth.”
+              </blockquote>
             </div>
             <div className={styles.quoteBlock}>
-              
-              <blockquote>“Cinema is poetry in motion, translating emotion into visual form.”</blockquote>
+              <blockquote>
+                “Cinema is poetry in motion, translating emotion into visual form.”
+              </blockquote>
             </div>
           </div>
 
@@ -44,9 +47,9 @@ function About() {
 
           {/* -------- CTA -------- */}
           <div className={styles.cta}>
-            <a href="/portfolio" className={styles.ctaBtn}>
+            <Link to="/portfolio" className={styles.ctaBtn}>
               Explore My Work
-            </a>
+            </Link>
           </div>
         </section>
       </main>
