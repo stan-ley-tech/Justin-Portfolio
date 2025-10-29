@@ -3,79 +3,98 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #ffffff;
+  color: #000000;
 }
 
 /* ========================================
-   HERO + ABOUT SECTION (Shared Background)
+   HERO + ABOUT SECTION
 ========================================= */
 .heroAboutWrapper {
-  background-image: url('/images/Image6.jpeg');
+  background-image: url('/images/coverb.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  padding: 8rem 2rem;
+  background-attachment: scroll;
+  padding: 20rem 1.5rem 8rem; /* pushed cards further down */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  color: #ffffff;
+  color: #000000;
 }
 
 .heroAboutInner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 3rem;
   max-width: 1200px;
   width: 100%;
+  flex-wrap: wrap;
+  margin-top: 12rem; /* increased margin to push cards lower */
 }
 
-/* Left side - Hero content */
+/* HERO CARD */
 .hero {
   flex: 1;
-  text-align: left;
+  background: rgba(255, 255, 255, 0.35); /* lighter overlay */
+  backdrop-filter: blur(20px); /* stronger blur */
+  border-radius: 1.2rem;
+  padding: 3.2rem 2.8rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 5rem; /* pushes Hero card further down */
+}
+
+.hero:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .hero h1 {
   font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #0f172a;
 }
 
 .hero h2 {
-  font-size: 1.5rem;
-  color: #cbe00a;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  font-size: 1.4rem;
+  color: #1e293b;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   line-height: 1.7;
-  color: #eaeaea;
-  max-width: 500px;
+  color: #334155;
+  max-width: 520px;
+  margin: 0 auto;
 }
 
-/* Right side - About Card */
+/* ABOUT CARD */
 .aboutCard {
   flex: 1;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  padding: 2.8rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
   text-align: left;
-  color: #ffffff;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  max-width: 450px;
+  color: #000000;
+  max-width: 440px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .aboutCard img {
   width: 100%;
-  height: 260px;
+  height: 250px;
   object-fit: cover;
   border-radius: 1rem;
   margin-bottom: 1.5rem;
@@ -85,13 +104,13 @@
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
-  color: gold;
+  color: #0f172a;
 }
 
 .aboutText p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #e5e5e5;
+  color: #334155;
 }
 
 /* ========================================
@@ -99,7 +118,7 @@
 ========================================= */
 .featured {
   text-align: center;
-  padding: 3rem 1.5rem 4rem;
+  padding: 4rem 1.5rem;
   background-color: #ffffff;
   color: #000000;
 }
@@ -107,43 +126,45 @@
 .featured h3 {
   font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .projectGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .projectCard {
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  height: 450px;
-  position: relative;
+  background: #f9fafb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .projectCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .projectCard img {
   width: 100%;
-  height: 60%;
+  height: auto;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
 }
 
 .projectCardContent {
-  padding: 0.8rem 1rem;
+  padding: 1.2rem 1rem;
   text-align: center;
-  height: 30%;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,27 +172,27 @@
 
 .projectCardContent h4 {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: rgb(35, 8, 153);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 
 .projectCardContent p {
-  font-size: 0.9rem;
-  color: #000000;
+  font-size: 0.95rem;
+  color: #222;
   line-height: 1.5;
 }
 
-/* 4th Card - Portfolio Preview */
+/* Portfolio Card */
 .portfolioCard {
   background-image: url('/images/Image8.jpeg');
   background-size: cover;
   background-position: center;
-
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  min-height: 250px;
 }
 
 .portfolioOverlay {
@@ -181,7 +202,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
 }
 
 .portfolioLink {
@@ -206,23 +227,22 @@
 ========================================= */
 .philosophy {
   background-color: #ffffff;
-  padding: 8rem 2rem;
+  padding: 6rem 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .philosophyMainCard {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  border-radius: 1rem;
+  gap: 2rem;
 }
 
 .philosophyImageWrap {
-  grid-column: 2;
   width: 100%;
   height: 420px;
   overflow: hidden;
@@ -242,12 +262,10 @@
 }
 
 .philosophyOverlayCard {
-  grid-column: 1;
   background-color: #ffffff;
   padding: 2.5rem;
   border-radius: 0.9rem;
   box-shadow: 0 18px 40px rgba(16, 24, 40, 0.08);
-  transform: translateX(10%);
 }
 
 .philosophyOverlayCard blockquote {
@@ -273,18 +291,31 @@
 /* ========================================
    RESPONSIVE DESIGN
 ========================================= */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .heroAboutInner {
     flex-direction: column;
     text-align: center;
+    gap: 2rem;
+    margin-top: 6rem;
   }
 
+  .hero,
   .aboutCard {
-    max-width: 100%;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
-  .hero {
-    text-align: center;
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
   }
 
   .philosophyMainCard {
@@ -292,12 +323,54 @@
   }
 
   .philosophyOverlayCard {
-    transform: none;
-    margin-bottom: 2rem;
+    order: 2;
+  }
+
+  .philosophyImageWrap {
+    order: 1;
+    height: 320px;
+  }
+
+  .projectGrid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }
 
-@media (max-width: 480px) {
-  .hero h1 { font-size: 2rem; }
-  .hero h2 { font-size: 1rem; }
+@media (max-width: 600px) {
+  .heroAboutWrapper {
+    padding: 10rem 1rem;
+  }
+
+  .hero {
+    margin-top: 2rem; /* adjust spacing on mobile */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1rem;
+  }
+
+  .featured h3 {
+    font-size: 1.6rem;
+  }
+
+  .projectGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .projectCard img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .projectCardContent {
+    padding: 1rem 0.8rem;
+  }
+
+  .philosophyOverlayCard blockquote {
+    font-size: 1.2rem;
+  }
 }

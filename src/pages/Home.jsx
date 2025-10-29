@@ -16,7 +16,7 @@ function Home() {
           {/* Left Side - Hero Content */}
           <main className={styles.hero}>
             <h1>Justin Atoyebi</h1>
-            <h2>Creative Visionary | Film & TV Producer | Entrepreneur</h2>
+            <h2>Artist | Producer | Entrepreneur</h2>
             <p>
               Capturing stories that move audiences and inspire culture.
               Explore my work in film, television, and creative media production.
