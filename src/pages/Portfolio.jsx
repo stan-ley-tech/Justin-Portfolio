@@ -3,10 +3,21 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./Portfolio.module.css";
 
-// Convert YouTube URLs to embed + thumbnail
+// Convert YouTube or Apple Music URLs to embed + thumbnail
 function getVideoData(url) {
   try {
     const parsedUrl = new URL(url);
+
+    // Handle Apple Music embed
+    if (parsedUrl.hostname.includes("music.apple.com")) {
+      const embedUrl = url.replace("music.apple.com", "embed.music.apple.com");
+      return {
+        embed: embedUrl,
+        thumbnail: "/images/Image3.jpeg", // You can change this to your album cover
+      };
+    }
+
+    // Handle YouTube embed
     let videoId = "";
     if (parsedUrl.hostname.includes("youtube.com") && parsedUrl.searchParams.get("v")) {
       videoId = parsedUrl.searchParams.get("v");
@@ -15,6 +26,7 @@ function getVideoData(url) {
     } else if (parsedUrl.hostname === "youtu.be") {
       videoId = parsedUrl.pathname.slice(1);
     }
+
     return {
       embed: `https://www.youtube.com/embed/${videoId}`,
       thumbnail: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
@@ -62,6 +74,14 @@ function Portfolio() {
       role: "Director | Editor | Producer",
       description: "Creative music video emphasizing emotion, rhythm, and storytelling.",
     },
+    {
+      id: 6,
+      title: "Open Case Album (Apple Music)",
+      url: "https://music.apple.com/us/album/open-case/1784307867",
+      role: "Artist Collaboration | Producer",
+      description:
+        "Experience the full 'Open Case' album directly here — a cinematic blend of sound and storytelling.",
+    },
   ];
 
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -80,6 +100,8 @@ function Portfolio() {
         <div className={styles.grid}>
           {videos.map((video) => {
             const { embed, thumbnail } = getVideoData(video.url);
+            const isAppleMusic = video.url.includes("music.apple.com");
+
             return (
               <div
                 key={video.id}
@@ -88,12 +110,17 @@ function Portfolio() {
                 onMouseEnter={() => setHoveredVideo(video.id)}
                 onMouseLeave={() => setHoveredVideo(null)}
               >
+                {/* Hover preview */}
                 {hoveredVideo === video.id ? (
                   <iframe
-                    src={`${embed}?autoplay=1&mute=1`}
+                    src={
+                      isAppleMusic
+                        ? embed
+                        : `${embed}?autoplay=1&mute=1`
+                    }
                     title={video.title}
                     className={styles.previewVideo}
-                    allow="autoplay; muted"
+                    allow="autoplay; encrypted-media"
                   ></iframe>
                 ) : (
                   <img
@@ -132,12 +159,17 @@ function Portfolio() {
               >
                 ✕ Close
               </button>
+
               <div className={styles.videoWrapper}>
                 <iframe
-                  src={`${getVideoData(selectedVideo.url).embed}?autoplay=1`}
+                  src={
+                    selectedVideo.url.includes("music.apple.com")
+                      ? getVideoData(selectedVideo.url).embed
+                      : `${getVideoData(selectedVideo.url).embed}?autoplay=1`
+                  }
                   title={selectedVideo.title}
                   frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="autoplay; encrypted-media"
                   allowFullScreen
                   className={styles.iframe}
                 ></iframe>
