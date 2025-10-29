@@ -44,7 +44,7 @@ function Portfolio() {
       title: "Fame",
       url: "https://youtu.be/TPCEjz9GFKU",
       role: "Director | Editor | Producer",
-      description: "A masterpiece made to showcase the effects of fame in celebreties.",
+      description: "A masterpiece made to showcase the effects of fame in celebrities.",
     },
     {
       id: 2,
@@ -71,7 +71,7 @@ function Portfolio() {
       id: 5,
       title: "Christmas tree",
       url: "https://youtu.be/2hOeuldPST8",
-      role: "Producer | Director | ",
+      role: "Producer | Director",
       description: "Creative music video emphasizing emotion, rhythm, and storytelling.",
     },
     {
@@ -81,6 +81,14 @@ function Portfolio() {
       role: "Artist Collaboration | Producer",
       description:
         "Experience the full 'Open Case' album directly here — a cinematic blend of sound and storytelling.",
+    },
+    {
+      id: 7,
+      title: "Vision Reel",
+      url: "https://youtu.be/lqoTys3gd4Q",
+      role: "Director | Editor | Visionary",
+      description:
+        "A visually captivating reel showcasing cinematic direction, lighting, and storytelling mastery.",
     },
   ];
 
