@@ -50,10 +50,9 @@ function Home() {
           <div className={styles.projectCard}>
             <img src="/images/Image2.jpeg" alt="Open Case Short Film" />
             <div className={styles.projectCardContent}>
-              <h4>Open Case Short Film</h4>
+              <h4>Fame</h4>
               <p>
-                A suspense-driven short exploring the depths of human emotion
-                and perception.
+                A masterpiece made to showcase the effects of fame in celebreties.
               </p>
             </div>
           </div>
@@ -62,7 +61,7 @@ function Home() {
           <div className={styles.projectCard}>
             <img src="/images/Image6.jpeg" alt="Daymare Promo" />
             <div className={styles.projectCardContent}>
-              <h4>Daymare Promo</h4>
+              <h4>Daymare Perfomance series</h4>
               <p>
                 A gripping visual concept blending creativity and cinematic
                 storytelling.
@@ -74,7 +73,7 @@ function Home() {
           <div className={styles.projectCard}>
             <img src="/images/Image7.jpeg" alt="Creative Direction Reel" />
             <div className={styles.projectCardContent}>
-              <h4>Creative Direction Reel</h4>
+              <h4>Christmas Tree</h4>
               <p>
                 A visual showcase of artistic mastery and unique storytelling
                 vision.
