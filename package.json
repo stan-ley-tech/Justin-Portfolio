@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://github.com/stan-ley-tech/Justin-Atoyebi-Portfolio.git",
+  "homepage": "https://github.com/stan-ley-tech/Justin-Portfolio.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -1,5 +1,5 @@
 .resume {
-  background-image: url('/dist/images/background.jpeg');
+  background-image: url('/images/Image6.jpeg'); /* ✅ Corrected path for Vercel */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -161,7 +161,7 @@
   gap: 1.8rem;
 }
 
-/* ✅ Removed border-left and dots causing weird markers */
+/* ✅ Cleaned layout */
 .experienceList li {
   padding-left: 0;
 }

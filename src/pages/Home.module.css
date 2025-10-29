@@ -10,7 +10,7 @@
    HERO + ABOUT SECTION (Shared Background)
 ========================================= */
 .heroAboutWrapper {
-  background-image: url('/dist/images/background.jpeg');
+  background-image: url('/images/Image6.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

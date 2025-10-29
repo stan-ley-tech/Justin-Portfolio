@@ -2,7 +2,7 @@
 .contactPage {
   position: relative;
   min-height: 100vh;
-  background-image: url('/dist/images/background.jpeg');
+  background-image: url('/images/Image6.jpeg'); /* ✅ Correct path for Vercel */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
